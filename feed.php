@@ -7,15 +7,16 @@ if( !isset($_GET['tag'] ) AND $_GET['tag'] != "" ) {
 }  else {
   $tag = "*";
 }
-$sql = "SELECT id, text, user, tags FROM Posts WHERE tag=".$tag." ORDER BY id ASC";
+$sql = "SELECT Benutzer_ID, Inhalt, Quak_ID, Tags FROM Posts WHERE tag=".$tag." ORDER BY id ASC";
 
 //DB Config
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "";
+$dbname = "quak";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -25,14 +26,15 @@ if ($conn->connect_error) {
 //hole daten
 $posts = $conn->query($sql);
 if ($posts->num_rows > 0) {
+  //zeige daten
+  <ul>
   while($post = $posts->fetch_assoc()) {
-    //zeige daten
-    <ul>
-    //MAX HTML CODE für einzelne posts
+  //MAX HTML CODE für einzelne posts
+    //Titel, Quak_ID, Benutzer_ID, Inhalt
     <li>
-      <img src="Bilder/avatar.PNG" alt="Avatar">
+      <img src="Bilder/".$post["Benutzer_ID"].".PNG" alt="Avatar">
       <div class="beitrag">
-        <strong>$post["user"] <span>@daddy69</span></strong>
+        <strong>$post["Benutzer_ID"] <span>@daddy69</span></strong>
         <p>$post["text"]</p>
         <div class="actions">
           <a href=""><alt="kommentieren">Kommentieren</alt="kommentieren"></a>
