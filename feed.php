@@ -1,8 +1,8 @@
 <?php
 
 //welcher feed
-$tag = $_GET["tag"];
-if( !isset($_GET['tag'] ) AND $_GET['tag'] != "" ) {
+$regexp = "/^[a-z]+$/";
+if( !isset($_GET['tag'] ) AND $_GET['tag'] != "" AND  preg_match($regexp, $_GET['tag']);) {
   $tag = $_GET['tag'];
 }  else {
   $tag = "*";
