@@ -1,0 +1,73 @@
+body {
+  background: #ecd6ff;
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+}
+.avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+.button {
+	color: #ecd6ff;
+	text-shadow: 0 -1px 1px rgba(0,0,0,.25);
+	background-color: #cd29ff;
+	padding: 5px 10px;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 18px;
+	border: 1px solid #ecd6ff;
+	border-radius: 4px;
+}
+
+#zwitscher-container {
+	padding: 54px 14px 15px;
+	margin: 0 auto;
+	width: 837px;
+}
+
+#dashboard {
+	border-radius: 4px;
+	background-color: white;
+	float: left;
+	width: 302px;
+}
+
+	#profile-summary, #zwitscher-inhalt {
+		padding: 12px;
+	}
+		#profile-summary .avatar {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#profile-summary .content {
+			position: relative;
+			border-bottom: 1px solid #e8e8e8;
+			min-height: 40px;
+		}
+		#profile-summary .content p {
+			margin-left: 42px;
+			font-weight: bold;
+			font-size: 14px;
+			text-shadow: 0 1px 0 #fff;
+		}
+
+		#zwitscher-inhalt {
+			padding-top: 0;
+		}
+
+	.zwitschern {
+		width: 100%;
+		height: 2.5em;
+		font-size: 13px;
+		padding: 5px;
+		border: 1px solid #ccc;
+		margin-bottom: 1em;
+		box-sizing: border-box;
+	}
+		#button-position {
+			text-align: right;
+		}
+
+
+
