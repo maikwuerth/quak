@@ -1,12 +1,14 @@
 <?php
 
+var_dump($_POST);
+
 function new_quak($Tags, $Benutzer_ID, $Inhalt) {
  $sql = "INSERT INTO Quaks (Tags, Benutzer_ID, Inhalt)
  VALUES ('$Tags', '$Benutzer_ID', '$Inhalt')";
  return $sql;
 }
 
-function insert($sql) {
+function insert($sql, $conn) {
 	if ($conn->query($sql) === TRUE) {
 	echo "New record created successfully";
 	}
@@ -16,7 +18,7 @@ function insert($sql) {
 }
 
 
-$Inhalt = $_POST["inhalt"];
+$Inhalt = $_POST["Inhalt"];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -32,10 +34,10 @@ $conn =new mysqli($servername, $username, $password, $dbname);
  }
  
  //Neuen Quak in DB einfügen
- $sql = new_quak("Test",, $Inhalt);
+ $sql = new_quak("Test",001, $Inhalt);
  
  //Insert durchführen
- insert($sql);
+ insert($sql, $conn);
  
 
 
