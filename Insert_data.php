@@ -1,9 +1,18 @@
 <?php
 
-function new_quak_insert($Titel, $Quak_ID, $Benutzer_ID, $Inhalt) {
- $sql = "INSERT INTO Quaks (Tags, Quak_ID, Benutzer_ID, Inhalt)
- VALUES ('$Titel', '$Quak_ID', '$Benutzer_ID', '$Inhalt')";
+function new_quak($Tags, $Benutzer_ID, $Inhalt) {
+ $sql = "INSERT INTO Quaks (Tags, Benutzer_ID, Inhalt)
+ VALUES ('$Tags', '$Benutzer_ID', '$Inhalt')";
  return $sql;
+}
+
+function insert($sql) {
+	if ($conn->query($sql) === TRUE) {
+	echo "New record created successfully";
+	}
+	else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 }
 
 
@@ -11,7 +20,7 @@ $Inhalt = $_POST["inhalt"];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "quak";
+$dbname = "QUAK_DB";
 
 // Verbindung Herstellen
 
@@ -21,17 +30,14 @@ $conn =new mysqli($servername, $username, $password, $dbname);
  if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
  }
- // Ermittle neue Quak_ID
- $Quak_ID = $conn->query("SELECT Quak_ID From Quaks ORDER BY Quak_ID DESC LIMIT 1");
- echo $Quak_ID;
- //Neuen Quak in DB einfügen
- $sql = new_quak_insert("Test", $Quak_ID, 001, $Inhalt);
  
- if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+ //Neuen Quak in DB einfügen
+ $sql = new_quak("Test",, $Inhalt);
+ 
+ //Insert durchführen
+ insert($sql);
+ 
+
 
 $conn->close();
  ?>
