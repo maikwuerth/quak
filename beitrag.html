@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Zwitscher</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header id="main-header">
+    <div class="content">
+      <nav>
+        <ul>
+			<li onclick="window.location.href='../index.html'">Home</li>
+			<li onclick="window.location.href='../Credits/credits.html'">Credits</li>
+        </ul>
+      </nav>
+      <img src="logo.png" alt="Logo" />
+      <div class="side">
+        <input type="text" placeholder="Suche auf Zwitscher" />
+        <img src="avatar.png" alt="" />
+        <button onclick="window.location.href='../index.html'">Abbrechen</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner">
+    <h1>Was möchtest du der Welt mitteilen?</h1>
+  </div>
+
+  <div class="wrapper-content content">
+    <aside class="profile">
+      <img class="avatar" src="avatar.PNG" alt="Avatar">
+      <h1>Maik-Wuerth</h1>
+      <span>@daddy69</span>
+      <p>Ich bin mir im Klaren darüber was die Ladies wollen #WomenLover</p>
+    </aside>
+	<form action='/PHP-Projekt/insert_data.php' method='POST'> 
+    <section class="zwitscher">
+      <div id="zwitscher-container">
+			<div id="dashboard">
+				<div id="profile-summary">
+					<div class="content">
+						<img class='avatar' src='avatar.PNG' />
+						<p><strong>Maik-Wuerth</strong></p>
+					</div>
+				</div>
+				<div id="zwitscher-inhalt">
+					<textarea class="zwitschern" placeholder="Was möchtest du zwitschern" name='Inhalt' id='Inhalt'/></textarea>
+					<div id="button-position">
+				<button class="button" id="text-upload">Text Upload</button>				
+				<button class="button" id="tweet-submit" type='submit'>Zwitschern</button>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	</form>
+  </div>
+</body>
+</html>
