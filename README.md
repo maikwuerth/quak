@@ -1,4 +1,16 @@
 # quak
-Billiger Twitter Klon - QUAK QUAK
-geiler shitttttttt
-I LOVE IT
+
+Wir müssen hier noch ne DOKU schreiben!
+
+DOKU
+====
+DOKU
+====
+DOKU
+====
+DOKU
+====
+DOKU
+====
+DOKU
+====
