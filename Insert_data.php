@@ -3,7 +3,7 @@
 var_dump($_POST);
 
 function new_quak($Tags, $Benutzer_ID, $Inhalt) {
- $sql = "INSERT INTO Quaks (Tags, Benutzer_ID, Inhalt)
+ $sql = "INSERT INTO quaks (Tags, Benutzer_ID, Inhalt)
  VALUES ('$Tags', '$Benutzer_ID', '$Inhalt')";
  return $sql;
 }
